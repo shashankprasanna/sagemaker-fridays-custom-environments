@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: eks-training-job
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+       - name: eks-ml-example
+         image: 453691756499.dkr.ecr.us-west-2.amazonaws.com/custom-dl-containers:eks-gpu
+         imagePullPolicy: Always
